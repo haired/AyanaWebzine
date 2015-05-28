@@ -1,0 +1,2 @@
+E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.Lib\AyanaWebzine.Lib.csproj;neutral
+E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\AyanaWebzine.WinPhone.csproj;neutral

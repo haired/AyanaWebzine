@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>HAIREDAW8</Machine>
+    <WindowsUser>Haired</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>fa5318e1-3551-4578-a12e-0a7138236415</PackageIdentityName>
+    <IntermediateOutputPath>E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\AyanaWebzine.WinPhone.exe">
+      <PackagePath>AyanaWebzine.WinPhone.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.Lib\bin\Debug\AyanaWebzine.Lib.dll">
+      <PackagePath>AyanaWebzine.Lib.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.Lib\bin\Debug\HtmlAgilityPack-PCL.dll">
+      <PackagePath>HtmlAgilityPack-PCL.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\BasicPage1.xbf">
+      <PackagePath>BasicPage1.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\Views\ArticleDetails.xbf">
+      <PackagePath>Views\ArticleDetails.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\Views\CategoryPage.xbf">
+      <PackagePath>Views\CategoryPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\Views\MainPage.xbf">
+      <PackagePath>Views\MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\AyanaWebzine.WinPhone.xr.xml">
+      <PackagePath>AyanaWebzine.WinPhone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

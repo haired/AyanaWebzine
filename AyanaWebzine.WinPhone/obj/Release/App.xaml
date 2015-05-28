@@ -1,0 +1,17 @@
+﻿<Application
+    x:Class="AyanaWebzine.WinPhone.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AyanaWebzine.WinPhone">
+    <Application.Resources>
+        <SolidColorBrush
+            x:Key="PivotHeaderForegroundUnselectedBrush"
+            Color="Gray">
+        </SolidColorBrush>
+        <SolidColorBrush    
+            x:Key="PivotHeaderForegroundSelectedBrush"
+            Color="Black">
+        </SolidColorBrush>
+    </Application.Resources>
+</Application>
+
