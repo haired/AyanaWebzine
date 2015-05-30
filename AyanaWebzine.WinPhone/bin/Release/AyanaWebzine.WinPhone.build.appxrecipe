@@ -52,12 +52,6 @@
     <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\BasicPage1.xbf">
-      <PackagePath>BasicPage1.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\ArticleDetails.xbf">
       <PackagePath>Views\ArticleDetails.xbf</PackagePath>
     </AppxPackagedFile>

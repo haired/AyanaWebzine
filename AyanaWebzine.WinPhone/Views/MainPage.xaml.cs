@@ -9,27 +9,23 @@ using Windows.UI.Xaml.Navigation;
 namespace AyanaWebzine.WinPhone.Views
 {
     public partial class MainPage : Page
-    {                
-        // Constructeur
+    {   
         public MainPage()
         {                                                                        
             InitializeComponent();
             this.DataContext = new MainPageViewModel();
-            (this.DataContext as MainPageViewModel).LoadData(true);     
+            (this.DataContext as MainPageViewModel).LoadData(true);
 
-            // Exemple de code pour la localisation d'ApplicationBar
-            //BuildLocalizedApplicationBar();
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Required;
         }  
 
         private void ListCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedCategory = this.ListCategories.SelectedItem as Category;
-
-            if (selectedCategory!= null)
+            var selectedCategoryIndex = this.ListCategories.SelectedIndex;
+            if (selectedCategoryIndex >= 0)
             {
-                this.ListCategories.SelectedItem = null;
-                Frame.Navigate(typeof(CategoryPage), selectedCategory);
-                //NavigationService.Navigate(new Uri("/CategoryPage.xaml?category=" + selectedCategory.ID.ToString(), UriKind.Relative));
+                Frame.Navigate(typeof(CategoryPage), selectedCategoryIndex);
+                this.ListCategories.SelectedIndex = -1;                      
             }
         }
 
@@ -37,27 +33,12 @@ namespace AyanaWebzine.WinPhone.Views
         {
             if(e.NavigationMode == NavigationMode.Back)
             {
-                this.EditoPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                this.EditoPage.Visibility = Visibility.Collapsed;
+                this.BottomAppBar.Visibility = Visibility.Visible;
             }
             base.OnNavigatedTo(e);
         }
-
         
-        //void HardwareButtons_BackPressed_edito(object sender, BackPressedEventArgs e)
-        //{
-        //    // If we are not on Edito page, cancel quitting the app and show the Edito
-        //    if (this.EditoPage.Opacity != 1)
-        //    {
-        //        this.EditoPage.Opacity = 1;
-        //        this.EditoPage.Visibility = Visibility.Visible;
-        //        this.BottomAppBar.Visibility = Visibility.Collapsed;
-        //        e.Handled = true;
-        //    } 
-        //}
-
-        
-
         private void Reload(object sender, RoutedEventArgs e)
         {
             (this.DataContext as MainPageViewModel).ReloadArticles();             
@@ -81,22 +62,6 @@ namespace AyanaWebzine.WinPhone.Views
                 }
             };
             timer.Start();
-        }
-
-        // Exemple de code pour la conception d'une ApplicationBar localisée
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Définit l'ApplicationBar de la page sur une nouvelle instance d'ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Crée un bouton et définit la valeur du texte sur la chaîne localisée issue d'AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Crée un nouvel élément de menu avec la chaîne localisée d'AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+        }         
     }
 }

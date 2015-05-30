@@ -6,7 +6,7 @@
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>fa5318e1-3551-4578-a12e-0a7138236415</PackageIdentityName>
+    <PackageIdentityName>87c39bf4-5a32-41a8-a0cf-216f3ca001bf</PackageIdentityName>
     <IntermediateOutputPath>E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
@@ -51,12 +51,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\BasicPage1.xbf">
-      <PackagePath>BasicPage1.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Debug\Views\ArticleDetails.xbf">
       <PackagePath>Views\ArticleDetails.xbf</PackagePath>

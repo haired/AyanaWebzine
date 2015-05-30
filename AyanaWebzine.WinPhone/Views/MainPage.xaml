@@ -9,8 +9,8 @@
     mc:Ignorable="d"
     xmlns:common="clr-namespace:AyanaWebzinePhone"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
-    >
+    Foreground="{StaticResource PhoneForegroundBrush}">
+    
     <Page.Resources>
         <Style x:Key="CategoritesTitle"  TargetType="TextBlock">
             <Setter Property="FontWeight" Value="Normal"/>
@@ -37,15 +37,13 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-
     <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
     <Grid x:Name="LayoutRoot" Margin="0,0.333,0,-0.333" Background="#FFCFCFCF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="42"/>
-            <RowDefinition Height="14"/>
+            <RowDefinition Height="42"/>           
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -74,18 +72,16 @@
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0" Background="#FFC855A6">
             <TextBlock TextWrapping="Wrap" Text="Ayana Webzine" Foreground="White" FontWeight="Bold" Margin="12,6,0,6" HorizontalAlignment="Left" FontSize="20"/>
         </StackPanel>
-        <ProgressBar Grid.Row="1" x:Name="ProgressBar" VerticalAlignment="Stretch" IsIndeterminate="{Binding IsLoading}" Margin="0">
-            <ProgressBar.Background>
-                <SolidColorBrush Color="#FFCFCFCF" Opacity="0.15999999642372131"/>
-            </ProgressBar.Background>
-        </ProgressBar>
-        <ListBox Grid.Row="2" x:Name="ListCategories" ItemTemplate="{StaticResource CategoriesListTemplate}" ItemsSource="{Binding Categories}" Margin="0,0,0,-2" SelectionChanged="ListCategories_SelectionChanged" Background="#FFCFCFCF" BorderThickness="0">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
+        <ProgressBar Grid.RowSpan="2" HorizontalContentAlignment="Stretch" x:Name="ProgressBar" VerticalAlignment="Top" IsIndeterminate="{Binding IsLoading}" Margin="0,30,0,0" VerticalContentAlignment="Stretch"/>
+       
+        <ListView Grid.Row="1" x:Name="ListCategories" ItemTemplate="{StaticResource CategoriesListTemplate}" ItemsSource="{Binding Categories}" SelectionChanged="ListCategories_SelectionChanged" Background="#FFCFCFCF" BorderThickness="0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
                 </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
 
         <Grid x:Name="EditoPage" Grid.RowSpan="3" Background="Black" DataContext="{Binding Categories[7].Articles[0]}" Tapped="EditoPage_Tapped">

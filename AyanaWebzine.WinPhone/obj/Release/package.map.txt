@@ -10,8 +10,6 @@
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\StoreLogo.scale-240.png" "Assets\StoreLogo.scale-240.png"
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\Assets\WideLogo.scale-240.png" "Assets\WideLogo.scale-240.png"
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\App.xbf" "App.xbf"
-"E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\BasicPage1.xbf" "BasicPage1.xbf"
-"E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\MainPage.xbf" "MainPage.xbf"
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\ArticleDetails.xbf" "Views\ArticleDetails.xbf"
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\CategoryPage.xbf" "Views\CategoryPage.xbf"
 "E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\MainPage.xbf" "Views\MainPage.xbf"

@@ -33,7 +33,7 @@ namespace AyanaWebzine.WinPhone
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-
+       
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
         /// à être exécutée. Elle correspond donc à l'équivalent logique de main() ou WinMain().
@@ -120,7 +120,7 @@ namespace AyanaWebzine.WinPhone
 
             // Vérifiez que la fenêtre actuelle est active
             Window.Current.Activate();
-        }
+        }    
 
         /// <summary>
         /// Restaure les transitions de contenu une fois l'application lancée.
@@ -143,8 +143,8 @@ namespace AyanaWebzine.WinPhone
         /// <param name="e">Détails de la requête de suspension.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            var deferral = e.SuspendingOperation.GetDeferral();
-
+            var deferral = e.SuspendingOperation.GetDeferral();  
+            
             // TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
             deferral.Complete();
         }

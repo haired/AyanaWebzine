@@ -124,33 +124,19 @@ namespace AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[12];
-            _typeNameTable[0] = "AyanaWebzine.WinPhone.BasicPage1";
+            _typeNameTable = new string[5];
+            _typeNameTable[0] = "AyanaWebzine.WinPhone.Views.ArticleDetails";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "AyanaWebzine.WinPhone.Common.NavigationHelper";
-            _typeNameTable[4] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[5] = "AyanaWebzine.WinPhone.Common.ObservableDictionary";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "String";
-            _typeNameTable[8] = "AyanaWebzine.WinPhone.MainPage";
-            _typeNameTable[9] = "AyanaWebzine.WinPhone.Views.ArticleDetails";
-            _typeNameTable[10] = "AyanaWebzine.WinPhone.Views.CategoryPage";
-            _typeNameTable[11] = "AyanaWebzine.WinPhone.Views.MainPage";
+            _typeNameTable[3] = "AyanaWebzine.WinPhone.Views.CategoryPage";
+            _typeNameTable[4] = "AyanaWebzine.WinPhone.Views.MainPage";
 
-            _typeTable = new global::System.Type[12];
-            _typeTable[0] = typeof(global::AyanaWebzine.WinPhone.BasicPage1);
+            _typeTable = new global::System.Type[5];
+            _typeTable[0] = typeof(global::AyanaWebzine.WinPhone.Views.ArticleDetails);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::AyanaWebzine.WinPhone.Common.NavigationHelper);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[5] = typeof(global::AyanaWebzine.WinPhone.Common.ObservableDictionary);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::AyanaWebzine.WinPhone.MainPage);
-            _typeTable[9] = typeof(global::AyanaWebzine.WinPhone.Views.ArticleDetails);
-            _typeTable[10] = typeof(global::AyanaWebzine.WinPhone.Views.CategoryPage);
-            _typeTable[11] = typeof(global::AyanaWebzine.WinPhone.Views.MainPage);
+            _typeTable[3] = typeof(global::AyanaWebzine.WinPhone.Views.CategoryPage);
+            _typeTable[4] = typeof(global::AyanaWebzine.WinPhone.Views.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,19 +171,9 @@ namespace AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_BasicPage1() { return new global::AyanaWebzine.WinPhone.BasicPage1(); }
-        private object Activate_5_ObservableDictionary() { return new global::AyanaWebzine.WinPhone.Common.ObservableDictionary(); }
-        private object Activate_8_MainPage() { return new global::AyanaWebzine.WinPhone.MainPage(); }
-        private object Activate_9_ArticleDetails() { return new global::AyanaWebzine.WinPhone.Views.ArticleDetails(); }
-        private object Activate_10_CategoryPage() { return new global::AyanaWebzine.WinPhone.Views.CategoryPage(); }
-        private object Activate_11_MainPage() { return new global::AyanaWebzine.WinPhone.Views.MainPage(); }
-        private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
-        {
-            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
-            var newKey = (global::System.String)key;
-            var newItem = (global::System.Object)item;
-            collection.Add(newKey, newItem);
-        }
+        private object Activate_0_ArticleDetails() { return new global::AyanaWebzine.WinPhone.Views.ArticleDetails(); }
+        private object Activate_3_CategoryPage() { return new global::AyanaWebzine.WinPhone.Views.CategoryPage(); }
+        private object Activate_4_MainPage() { return new global::AyanaWebzine.WinPhone.Views.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -209,11 +185,9 @@ namespace AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  AyanaWebzine.WinPhone.BasicPage1
+            case 0:   //  AyanaWebzine.WinPhone.Views.ArticleDetails
                 userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_BasicPage1;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
+                userType.Activator = Activate_0_ArticleDetails;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -226,57 +200,16 @@ namespace AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo
                 xamlType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  AyanaWebzine.WinPhone.Common.NavigationHelper
-                userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 4:   //  Windows.UI.Xaml.DependencyObject
-                xamlType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 5:   //  AyanaWebzine.WinPhone.Common.ObservableDictionary
-                userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_5_ObservableDictionary;
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 6:   //  Object
-                xamlType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  String
-                xamlType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  AyanaWebzine.WinPhone.MainPage
+            case 3:   //  AyanaWebzine.WinPhone.Views.CategoryPage
                 userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_MainPage;
+                userType.Activator = Activate_3_CategoryPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  AyanaWebzine.WinPhone.Views.ArticleDetails
+            case 4:   //  AyanaWebzine.WinPhone.Views.MainPage
                 userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_ArticleDetails;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 10:   //  AyanaWebzine.WinPhone.Views.CategoryPage
-                userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_CategoryPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 11:   //  AyanaWebzine.WinPhone.Views.MainPage
-                userType = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_MainPage;
+                userType.Activator = Activate_4_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -285,37 +218,11 @@ namespace AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo
         }
 
 
-        private object get_0_BasicPage1_NavigationHelper(object instance)
-        {
-            var that = (global::AyanaWebzine.WinPhone.BasicPage1)instance;
-            return that.NavigationHelper;
-        }
-        private object get_1_BasicPage1_DefaultViewModel(object instance)
-        {
-            var that = (global::AyanaWebzine.WinPhone.BasicPage1)instance;
-            return that.DefaultViewModel;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlMember xamlMember = null;
-            global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType userType;
-
-            switch (longMemberName)
-            {
-            case "AyanaWebzine.WinPhone.BasicPage1.NavigationHelper":
-                userType = (global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AyanaWebzine.WinPhone.BasicPage1");
-                xamlMember = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AyanaWebzine.WinPhone.Common.NavigationHelper");
-                xamlMember.Getter = get_0_BasicPage1_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "AyanaWebzine.WinPhone.BasicPage1.DefaultViewModel":
-                userType = (global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AyanaWebzine.WinPhone.BasicPage1");
-                xamlMember = new global::AyanaWebzine.WinPhone.AyanaWebzine_WinPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AyanaWebzine.WinPhone.Common.ObservableDictionary");
-                xamlMember.Getter = get_1_BasicPage1_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            }
+            // No Local Properties
             return xamlMember;
         }
     }

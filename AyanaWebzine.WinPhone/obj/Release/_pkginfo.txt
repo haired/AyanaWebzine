@@ -1,1 +1,1 @@
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\AppPackages\AyanaWebzine.WinPhone_1.1.0.0_AnyCPU_Test\AyanaWebzine.WinPhone_1.1.0.0_AnyCPU.appx
+E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\AppPackages\AyanaWebzine.WinPhone_1.1.0.3_AnyCPU_Test\AyanaWebzine.WinPhone_1.1.0.3_AnyCPU.appx

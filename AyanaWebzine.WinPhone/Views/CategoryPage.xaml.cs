@@ -12,34 +12,35 @@ namespace AyanaWebzine.WinPhone.Views
     public partial class CategoryPage : Page
     {
         DataStore dataStore = DataStore.GetInstance();
+        
         public CategoryPage()
         {
             InitializeComponent();
             this.DataContext = new CategoriesPageViewModel(true);
+
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Required;
         }
 
         protected override void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
         {
             if (e.NavigationMode == NavigationMode.New)
-            {                   
-                //string selectedCategoryId = NavigationContext.QueryString["category"];
-                //var selectedCategory = dataStore.Categories.FirstOrDefault(c => c.ID.ToString() == selectedCategoryId); //DataSource.GetCategory(Guid.Parse(selectedCategoryId));
-                Category selectedCategory = e.Parameter as Category;
-                if(selectedCategory != null)
-                    this.CategoriesPivot.SelectedIndex = dataStore.Categories.IndexOf(selectedCategory);                     
+            {                  
+                int? selectedCategoryIndex = e.Parameter as int?;
+                if (selectedCategoryIndex != null && selectedCategoryIndex >= 0)
+                {                                               
+                    this.CategoriesPivot.SelectedIndex = (int)selectedCategoryIndex;
+                }
             }
-            
         }
-          
-        private void ArticlesList_Tap(object sender, TappedRoutedEventArgs e)
+
+        private void ArticlesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListBox articlesList = ((ListBox)sender);
-            var selectedArticle = articlesList.SelectedItem as Article;
-            if(selectedArticle != null)
+            ListView selectedCategory = sender as ListView;
+            Article selectedArticle = selectedCategory.SelectedItem as Article;
+            if (selectedArticle != null)
             {
-                articlesList.SelectedItem = null;
                 Frame.Navigate(typeof(ArticleDetails), selectedArticle);
-                //NavigationService.Navigate(new Uri("/ArticleDetails.xaml?&articleId=" + selectedArticle.Id, UriKind.Relative));
+                selectedCategory.SelectedItem = null;
             }
         }     
     }

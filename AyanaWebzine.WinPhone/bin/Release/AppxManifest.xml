@@ -7,7 +7,7 @@
 
     Pour plus d'informations sur les fichiers manifeste, consultez http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="43549ChristianKouam.AyanaWebzine" Publisher="CN=559DA1C0-05AE-4513-895A-A6616D944F72" Version="1.1.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="43549ChristianKouam.AyanaWebzine" Publisher="CN=559DA1C0-05AE-4513-895A-A6616D944F72" Version="1.1.0.3" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="87c39bf4-5a32-41a8-a0cf-216f3ca001bf" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Ayana Webzine</DisplayName>

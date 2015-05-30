@@ -48,9 +48,10 @@ namespace AyanaWebzine.WinPhone.ViewModels
 
         public async void ReloadArticles()
         {               
-            //this.IsLoading = true;
+            this.IsLoading = true;
             await dataStore.GetData();
-            CategoriesLoaded();      
+            CategoriesLoaded();
+            this.IsLoading = false;  
         }
       
         private void CategoriesLoaded()

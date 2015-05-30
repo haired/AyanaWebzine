@@ -7,11 +7,11 @@
 
     Pour plus d'informations sur les fichiers manifeste, consultez http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="fa5318e1-3551-4578-a12e-0a7138236415" Publisher="CN=Haired" Version="1.0.0.0" ProcessorArchitecture="neutral" />
-  <mp:PhoneIdentity PhoneProductId="fa5318e1-3551-4578-a12e-0a7138236415" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="43549ChristianKouam.AyanaWebzine" Publisher="CN=559DA1C0-05AE-4513-895A-A6616D944F72" Version="1.1.0.2" ProcessorArchitecture="neutral" />
+  <mp:PhoneIdentity PhoneProductId="87c39bf4-5a32-41a8-a0cf-216f3ca001bf" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>AyanaWebzine.WinPhone</DisplayName>
-    <PublisherDisplayName>Haired</PublisherDisplayName>
+    <DisplayName>Ayana Webzine</DisplayName>
+    <PublisherDisplayName>Christian Kouamé</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>

@@ -9,9 +9,10 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     mc:Ignorable="d">
+   
     <Page.Resources>
         <DataTemplate x:Key="ArticlesListTemplate">
-            <Grid Height="400" Background="#FFE2E2E2" Margin="0,6">
+            <Grid Height="500" Background="White" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
@@ -21,7 +22,7 @@
                     <RowDefinition Height="199*"/>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="Txt_date" TextWrapping="Wrap" Text="{Binding Date}" Foreground="#FF1D1A1A" Margin="12,0,24,1" FontSize="18.667" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe WP" FontWeight="Bold" />
-                <Image Source="{Binding ThumbnailUri}" Stretch="UniformToFill" Margin="0" Grid.Row="1"/>
+                <Image Source="{Binding ThumbnailUri}" Stretch="UniformToFill" Margin="0" Grid.Row="1" HorizontalAlignment="Stretch"/>
                 <Grid Margin="12" Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="71*"/>
@@ -32,9 +33,17 @@
                 </Grid>
             </Grid>
         </DataTemplate>
-        <Thickness x:Key="PivotPortraitThemePadding">19,38,0,0</Thickness>
-        <Thickness x:Key="PivotLandscapeThemePadding">19,25,0,0</Thickness>
-        <Thickness x:Key="PivotItemMargin">19,22.5,19,0</Thickness>
+        <DataTemplate x:Key="PivotItemHeaderTemplate">
+            <Grid>
+                <TextBlock Text="{Binding Name}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="PivotItemTemplate">
+            <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView x:ConnectionId='1' x:Name="ModeArticlesList" ItemsSource="{Binding Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0"                                                 />
+            </Grid>
+        </DataTemplate>
+        <Thickness x:Key="PivotPortraitThemePadding">0,0,0,0</Thickness>
         <Style x:Key="PivotStyle" TargetType="Pivot">
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Padding" Value="0"/>
@@ -50,17 +59,31 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Pivot">
-                        <Grid x:Name="RootElement" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                        <Grid x:Name="RootElement" Background="{TemplateBinding Background}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="598.166625976563"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="Orientation">
-                                    <VisualState x:Name="Portrait"/>
-                                    <VisualState x:Name="Landscape"/>
+                                    <VisualState x:Name="Portrait">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="TitleContentControl">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Landscape">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="TitleContentControl">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PivotLandscapeThemePadding}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ScrollViewer x:Name="ScrollViewer" HorizontalSnapPointsAlignment="Center" HorizontalSnapPointsType="MandatorySingle" HorizontalScrollBarVisibility="Hidden" Margin="0,0,0,0.167" Template="{StaticResource ScrollViewerScrollBarlessTemplate}" VerticalSnapPointsType="None" VerticalScrollBarVisibility="Disabled" VerticalScrollMode="Disabled" VerticalContentAlignment="Stretch" ZoomMode="Disabled">
+                            <ContentControl x:Name="TitleContentControl" ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Style="{StaticResource PivotTitleContentControlStyle}"/>
+                            <ScrollViewer x:Name="ScrollViewer" HorizontalSnapPointsAlignment="Center" HorizontalSnapPointsType="MandatorySingle" HorizontalScrollBarVisibility="Hidden" Margin="0" Grid.Row="1" Template="{StaticResource ScrollViewerScrollBarlessTemplate}" VerticalSnapPointsType="None" VerticalScrollBarVisibility="Disabled" VerticalScrollMode="Disabled" VerticalContentAlignment="Stretch" ZoomMode="Disabled">
                                 <PivotPanel x:Name="Panel" VerticalAlignment="Stretch">
                                     <PivotHeaderPanel x:Name="Header">
                                         <PivotHeaderPanel.RenderTransform>
@@ -79,125 +102,45 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Thickness x:Key="PivotItemMargin">0,6,0,0</Thickness>
+        <Style x:Key="PivotItemStyle" TargetType="PivotItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="{ThemeResource PivotItemMargin}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PivotItem">
+                        <Grid Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="Pivot">
+                                    <VisualState x:Name="Right"/>
+                                    <VisualState x:Name="Left"/>
+                                    <VisualState x:Name="Center"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
 
     <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
     <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="42"/>
-            <RowDefinition />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0" Background="#FFC855A6">
             <TextBlock TextWrapping="Wrap" Text="Ayana Webzine" Foreground="White" FontWeight="Bold" Margin="12,6,0,6" HorizontalAlignment="Left" FontSize="20"/>
         </StackPanel>
-        <!--<ProgressBar Grid.Row="1" x:Name="ProgressBar" VerticalAlignment="Top" Height="10" IsIndeterminate="{Binding IsLoading}"/>-->
-        <!--ContentPanel - placez tout contenu supplémentaire ici-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0" >
-            <!--ListBox x:Name="ArticlesList" ItemsSource="{Binding Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Visibility="Collapsed"/-->
-            <!--<Pivot Name="CategoriesPivot" ItemsSource="{Binding Categories}" VerticalContentAlignment="Stretch" Margin="0,27,0,0" HorizontalContentAlignment="Stretch">-->
-            <Pivot Name="CategoriesPivot" VerticalContentAlignment="Stretch" Margin="0,27,0,0" HorizontalContentAlignment="Stretch" Background="{x:Null}" Style="{StaticResource PivotStyle}">
-
-                <!--<Pivot.HeaderTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" FontSize="60" HorizontalAlignment="Stretch"/>
-                    </DataTemplate>
-                </Pivot.HeaderTemplate>-->
-
-                <!--<Pivot.ItemTemplate>
-                    <DataTemplate>
-                        <PivotItem>
-                            <Grid>
-                                <ListBox  Background="#FF0CA80C" x:Name="ModeArticlesList" ItemsSource="{Binding Articles}"  Margin="0" Tapped="ArticlesList_Tap">
-                                    <ListBox.ItemContainerStyle>
-                                        <Style TargetType="ListBoxItem">
-                                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
-                                        </Style>
-                                    </ListBox.ItemContainerStyle>
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Height="300" Background="#FFE2E2E2" Margin="0,6">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="57*"/>
-                                                    <RowDefinition Height="233*"/>
-                                                    <RowDefinition Height="199*"/>
-                                                </Grid.RowDefinitions>
-                                                <TextBlock x:Name="Txt_date" TextWrapping="Wrap" Text="{Binding Date}" Foreground="#FF1D1A1A" Margin="12,0,24,1" FontSize="18.667" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe WP" FontWeight="Bold" />
-                                                <Image Source="{Binding ThumbnailUri}" Stretch="UniformToFill" Margin="0" Grid.Row="1"/>
-                                                <Grid Margin="12" Grid.Row="2">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="71*"/>
-                                                        <RowDefinition Height="104*"/>
-                                                    </Grid.RowDefinitions>
-                                                    <TextBlock x:Name="Txt_title" TextWrapping="Wrap" Text="{Binding Title}" Foreground="#FF1D1A1A" Margin="12,0" TextTrimming="WordEllipsis" FontSize="26.667" FontFamily="Segoe UI Semibold"/>
-                                                    <TextBlock x:Name="Txt_snipet" TextWrapping="Wrap" Text="{Binding Introduction}" Grid.Row="1" Foreground="#FF1D1A1A" Margin="12,0" TextTrimming="WordEllipsis" FontSize="18" FontFamily="Segoe UI Light"/>
-                                                </Grid>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
-                            </Grid>
-                        </PivotItem>
-                    </DataTemplate>
-                </Pivot.ItemTemplate>-->
-
-
-                <PivotItem  Header="mode" Margin="0">
-                    <Grid Margin="0,0,0,-0.333">
-                        <ListBox x:ConnectionId='8' x:Name="ModeArticlesList" ItemsSource="{Binding Categories[0].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="beaute" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='7' x:Name="BeauteArticlesList" ItemsSource="{Binding Categories[1].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="couple/sexo" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='6' x:Name="CoupleArticlesList" ItemsSource="{Binding Categories[2].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="bien être" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='5' x:Name="BienetreArticlesList"  ItemsSource="{Binding Categories[3].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="lifestyle" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='4' x:Name="LifestyleArticlesList" ItemsSource="{Binding Categories[4].Articles}"  ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="business" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='3' x:Name="BusinessArticlesList" ItemsSource="{Binding Categories[5].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="culture" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='2' x:Name="CultureArticlesList" ItemsSource="{Binding Categories[6].Articles}"  ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-                <PivotItem CacheMode="{x:Null}" Header="edito" Margin="12,0">
-                    <Grid>
-                        <ListBox x:ConnectionId='1' x:Name="EditoArticlesList" ItemsSource="{Binding Categories[7].Articles}" ItemTemplate="{StaticResource ArticlesListTemplate}" Margin="0,0,-24,-137" Grid.RowSpan="2" Grid.Row="1"                          />
-                    </Grid>
-                </PivotItem>
-
-
-            </Pivot>
-        </Grid>
+        <Pivot x:Name="CategoriesPivot" Title="" Grid.Row="1" ItemsSource="{Binding Categories}" ItemTemplate="{StaticResource PivotItemTemplate}" Style="{StaticResource PivotStyle}" HeaderTemplate="{StaticResource PivotItemHeaderTemplate}" ItemContainerStyle="{StaticResource PivotItemStyle}" Margin="0,40,0,0"/>
     </Grid>
-
 </Page>
 

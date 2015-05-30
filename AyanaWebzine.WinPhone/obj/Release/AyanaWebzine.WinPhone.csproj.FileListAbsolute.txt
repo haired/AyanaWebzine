@@ -1,6 +1,4 @@
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\App.xbf
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\BasicPage1.xbf
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\MainPage.xbf
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\ArticleDetails.xbf
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\CategoryPage.xbf
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Views\MainPage.xbf
@@ -18,10 +16,6 @@ E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\bin\Release\Html
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\AyanaWebzine.WinPhone.csprojResolveAssemblyReference.cache
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\App.g.i.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\App.g.cs
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\BasicPage1.g.i.cs
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\BasicPage1.g.cs
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\MainPage.g.i.cs
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\MainPage.g.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\ArticleDetails.g.i.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\ArticleDetails.g.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\CategoryPage.g.i.cs
@@ -30,11 +24,7 @@ E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\View
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\MainPage.g.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\XamlTypeInfo.g.cs
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\App.xaml
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\BasicPage1.xaml
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\MainPage.xaml
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\App.xbf
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\BasicPage1.xbf
-E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\MainPage.xbf
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\XamlSaveStateFile.xml
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\ArticleDetails.xaml
 E:\Projects\ayanaWebzine_New\AyanaWebzine\AyanaWebzine.WinPhone\obj\Release\Views\CategoryPage.xaml
